@@ -1,15 +1,13 @@
-# Using what you have learnt about Python programming, you will build a text-based version of the Tic Tac Toe game.
-# The game should be playable in the command line just like the Blackjack game we created on Day 11. It should be a
-# 2-player game, where one person is "X" and the other plays "O".
-#
-# TODO: Create a board out of ASCII characters, 3 rows with 3 columns each, which will be stored in a nested list:
-#  [[row1], [row2], [row3]]
+# A simple python script that emulates a typical game of Tic-Tac-Toe using in-line commands.
+# Player 1 plays first as 'x' and Player 2 is 'o' and will be randomly simulated actions.
+
 
 import random
 import time
 
 game_on = True
 
+# Prints out the boards current state
 def display_board(board):
     for row in board:
         row_text = '----------\n'
@@ -17,6 +15,7 @@ def display_board(board):
             row_text += char + " | "
         print(row_text[:-2])
 
+# Checks all possible win conditions
 def check_win(board):
     # Check Horizontals
     if board[0][0] == board[0][1] == board[0][2] and board[0][0] != '-':
@@ -43,6 +42,7 @@ def check_win(board):
     else:
         return False
 
+# Randomly chooses next move for Player 2 based on current board state
 def player_2_move(board):
     possible_moves = []
     for x in [0, 1, 2]:
@@ -52,6 +52,7 @@ def player_2_move(board):
     player2_move = random.choice(possible_moves)
     return player2_move
 
+# Main game loop while game_on is True
 while game_on:
     ttt_board = [['-', '-', '-'], ['-', '-', '-'], ['-', '-', '-']]
     print("Welcome to Tic-Tac-Toe! You are Player 1.")
@@ -83,7 +84,7 @@ while game_on:
             time.sleep(2)
             break
 
-        # Player 2 move
+        # Player 2 move & win check
         p2_move = player_2_move(ttt_board)
         ttt_board[p2_move[0]][p2_move[1]] = 'o'
         if check_win(ttt_board):
@@ -92,5 +93,3 @@ while game_on:
             print('============================================\n')
             time.sleep(2)
             break
-
-
