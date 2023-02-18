@@ -2,6 +2,19 @@
 # Player 1 plays first as 'x' and Player 2 is 'o' and will be randomly simulated actions.
 
 
+# I approached the project by first creating an actionable plan of steps that I can logically follow. Such
+# as making a list of functionality that need to be coded in order. After following through with the list
+# and creating each part, I noted down which sections needed work and what additional work needed to be added
+# that was not noticed initially. Each section was tested for correct functionality as soon as they were written.
+# After full functionality was achieved, I went back and cleaned up each section and added commentary.
+#
+# Easiest parts were following through with the action plan and coding section by section. The hard part
+# was coming up with a logical plan that could be followed. Future improvements would include updating the
+# Player 2 "AI" to make better choices as well as including a score counter. If I were to tackle this project
+# again, I would try to simplify/improve the game loop and see if there is a better way other than using
+# while loops and breaks.
+
+
 import random
 import time
 
